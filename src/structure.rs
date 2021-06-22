@@ -17,7 +17,15 @@ impl<T> Store<T> {
         self.map.insert(key, value);
     }
 
-    pub fn remove(&mut self, key: &String) -> Option<T> {
+    pub fn remove(&mut self, key: &str) -> Option<T> {
         self.map.remove(key)
+    }
+}
+
+impl<T> Default for Store<T> {
+    fn default() -> Self {
+        Store {
+            map: HashMap::new(),
+        }
     }
 }
