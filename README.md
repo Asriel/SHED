@@ -6,6 +6,7 @@ with ELF Executables.
 ```rust
 // Create a new SHED
 let mut shed_example = shed::Shed::new();
+
 // Test wheather this executable already has a SHED
 if !shed_example.shed_exists() {
     shed_example
@@ -14,7 +15,7 @@ if !shed_example.shed_exists() {
 }
 
 // Create a key value store with the value type String
-let mut x: shed::Store<String> = shed::Store::new();
+let mut x = shed::Store::new();
 x.insert(String::from("Test Key"), String::from("Test Value"));
 
 // Write our key store to the SHED
@@ -32,7 +33,7 @@ println!("{:?}", read_shed);
 - [x] Get fully working on Linux
 - [ ] Add support for Windows PE executables
 - [ ] Make API look nicer
-- [ ] Write some documentation
+- [x] Write some documentation
 
 ## Warning
 This crate is experimental, since it involves an executable file modifying

@@ -9,23 +9,23 @@
 //!
 //!// Test wheather this executable already has a SHED
 //!if !shed_example.shed_exists() {
-//!    shed_example
-//!        .initialize_shed()
-//!        .expect("Failed to initialize SHED");
+//!     shed_example
+//!         .initialize_shed()
+//!         .expect("Failed to initialize SHED");
 //!}
 //!
 //!// Create a key value store with the value type String
-//!let mut x: shed::Store<String> = shed::Store::new();
+//!let mut x = shed::Store::new();
 //!x.insert(String::from("Test Key"), String::from("Test Value"));
 //!
 //!// Write our key store to the SHED
 //!shed_example
-//!    .write_shed(x)
-//!    .expect("Failed to write data to SHED");
+//!     .write_shed(x)
+//!     .expect("Failed to write data to SHED");
 //!
 //!// Read key value store from SHED
 //!let read_shed: shed::Store<String> =
-//!    shed_example.read_shed().expect("Failed to read from SHED");
+//!     shed_example.read_shed().expect("Failed to read from SHED");
 //!println!("{:?}", read_shed);
 //! ```
 pub mod shed;
